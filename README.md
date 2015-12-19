@@ -3,4 +3,4 @@
 Thesis 1 Prototype
 
 
-![image](../blob/master/scrshot/grid9.png?raw=true)
+![image](https://raw.githubusercontent.com/umisyam/ProjectKraving_P5/master/scrshot/grid9.png)
