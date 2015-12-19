@@ -1,0 +1,771 @@
+/*  Main CSS file  
+*   Umi Syam - Thesis 1: Final Prototype
+*/
+
+@font-face {
+    font-family: 'nlicons';
+    src:url('../fonts/nlicons/nlicons.eot');
+    src:url('../fonts/nlicons/nlicons.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/nlicons/nlicons.woff') format('woff'),
+        url('../fonts/nlicons/nlicons.ttf') format('truetype'),
+        url('../fonts/nlicons/nlicons.svg#nlicons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	/*font-family: 'Open Sans', sans-serif;*/
+	font-size: 14px;
+	background: #000;
+	color: #fff;
+	padding: 0; margin: 0;
+	/*font-family: 'Itim', cursive;*/
+	font-family: 'Nixie One', cursive;
+}
+canvas {vertical-align: top;}
+
+.mainContainer {
+	margin: 0 auto;
+	width: 900px;
+	min-height: 80px;
+	text-align: center;
+}
+
+#hello {
+	width: 100%;
+	height: 100vh;
+	z-index: 10;
+	margin: 0;
+	padding: 0 0 0 0;
+	position: absolute;
+    background: #222;
+    text-align: center;
+}
+
+#oneliner {
+	position: relative;
+	top: 20vh;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.gray {
+    color: #666;
+}
+
+#oneliner h1 {
+    font-family: 'Itim', cursive;
+    line-height: 10vh;
+    font-size: 17vh;
+    font-weight: normal;
+    letter-spacing: -5px;
+    margin-bottom: -20px;
+
+}
+.definition {
+    letter-spacing: 0px;
+    position: relative;
+    top: -5vh;
+    bottom: 0;
+    left: 34vh;
+    right: 0;
+    font-size: 3vh;
+    /* font-weight: normal; */
+    font-family: 'Itim', cursive;
+    margin: 0;
+    text-align: right;
+    color: #555;
+}
+#oneliner h3 {
+    font-size: 3vh;
+    font-weight: normal;
+}
+#btn-start {
+	width: 15vw;
+    height: 50px;
+    font-size: 3vh;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Nixie One', cursive;
+    position: relative;
+    top: 24vh;
+    background-color: #fff266;
+}
+
+#results {
+	display: none;
+	position: relative;
+	z-index: 100;
+	background-color: black;
+	width: 100vw;
+	/*height: 100vh;*/
+}
+
+#results div {
+	width: 25vw;
+	height: 25vh;
+	float: left;
+	margin: 0 0 20px 0;
+}
+
+#results div iframe {
+	width: 100%;
+	height: 100%;
+}
+
+#results p {
+	width: 25vw;
+	margin: 0;
+}
+
+nav {
+	margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+}
+
+#fromParse {
+	width: 220px;
+    height: 50px;
+    font-size: 14pt;
+    cursor: pointer;
+    font-family: 'Nixie One', cursive;
+    margin: 10px;
+}
+.help {
+	width: 50px;
+    height: 50px;
+    font-size: 14pt;
+    cursor: pointer;
+    font-family: 'Nixie One', cursive;
+    margin: 10px;
+    background-color: #fff266;
+    font-weight: bold;
+}
+
+#logo:hover {
+    cursor: pointer;
+}
+
+/*----- TOP -----*/
+#top-bar{
+    position: relative;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #222;
+    /* border-bottom: 1px solid #444; */
+    z-index: 1;
+    padding: 10px 0;
+    font-family: 'Itim', cursive;
+    /* font-family: Arial; */
+    font-weight: normal;
+    font-size: 13px;
+    /* line-height: 16px; */
+    /* margin: 10px; */
+    /* border-top: 1px solid #444; */
+}
+#top-bar h1{
+    font-size: 25px;
+    margin: 3px 5px 0px 10px;
+}
+
+/*FIXED RIGHT PANEL*/
+#misc-panel{
+    position: fixed;
+    right: 0;
+    top: 0px;
+    padding: 0px 20px;
+    width: 25vw;
+    height: 100%;
+    text-align: left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 60px; 
+    z-index: 100;
+    font-weight: normal;
+    background-color: #222;       
+}
+#total-result, #search-term {
+    color: #FF0C51;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1;
+    /* font-family: 'Nixie One', cursive; */
+}
+#misc-panel h1 {
+    font-size: 1.2em;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+ul#trending {
+    padding: 0;
+}
+
+ul#trending li {
+    display: inline-block;
+    height: 38px;
+}
+
+ul#trending li a {
+    color: #aaa;
+    padding: 6px 10px;
+    text-decoration: none;
+    border: 1px solid #aaa;
+}
+
+ul#trending li a:hover {
+    background-color: #FFE865;
+    color: black;
+}
+
+/*----- MENU -----*/
+#search-div{
+    position: fixed;
+    left: 0;
+    top: 0px;
+    padding: 10px;
+    width: 200px;
+    height: 100%;
+    text-align: left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 100px;
+
+    border-right: 1px solid black;
+    font-family: 'Itim', cursive;
+    /*font-family: Arial;*/
+    font-weight: normal;    
+    font-size: 15px;
+    /*font-weight: normal;*/
+    /*line-height: 13px;*/
+    background-color: rgba(255, 255, 255, 0.85);        
+}
+
+#search-div input,
+#search-div button{
+    border: 1px solid black;
+    background-color: white;
+    outline: none;  
+    padding: 4px 6px;
+}
+
+#search-div input{
+    background-color: white;
+    font-family: 'Itim', cursive;
+    font-size: 16px;
+}
+
+#search-div button{
+    background-color: black;
+    color: white;
+    font-family: 'Itim', cursive;
+    font-size: 13px;
+    height: 29px;
+    margin-top: -2px;
+}
+
+#search-div .search-options h2 {
+    font-size: 14px;
+    line-height: 16px;
+    border-bottom: 1px solid black;
+    padding-bottom: 8px;
+    text-transform: uppercase;  
+    color: black;
+    /*font-family: 'Nixie One', cursive;*/
+    font-family: 'Itim', cursive;
+    margin-top: 25px;
+}
+
+.trending-topics h2{
+    font-size: 14px;
+    line-height: 16px;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 8px;
+    text-transform: uppercase;  
+    color: #aaa;
+    /*font-family: 'Nixie One', cursive;*/
+    font-family: 'Itim', cursive;
+    margin-top: 25px;
+}
+
+#search-div .search-options .column{
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#search-div .search-options input[type=radio] {
+    visibility: hidden;
+}
+
+#search-div .search-options .checkbox-container {
+    position: relative;
+    margin: 6px 0;
+    text-indent: -12px;
+    padding-left: 12px;
+}
+
+#search-div .search-options .checkbox-container span{
+    position: relative;
+    /*left: 8px;*/
+    color:#000;
+    top: -3px;
+}
+
+#search-div .search-options .checkbox-container label {
+    cursor: pointer;
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 0;
+    left: 0;
+    background: white;
+    border:1px solid black;
+    border-radius: 50%;
+    /*visibility: hidden;*/
+}
+
+#search-div .search-options .checkbox-container input[type=radio]:checked + label:after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 3px;
+    background: transparent;
+    top: 3px;
+    left: 2px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#search-div .search-options .date-container {
+    position: relative;
+    margin: 6px 0;
+}
+
+#search-div .search-options .selection-buttons{
+    background: white;
+    border: 1px solid black;
+    color: black;
+    margin-right: 5px;
+}
+
+
+/*ICONS*/
+.hi-icon-wrap {
+    text-align: center;
+    margin: 0 auto;
+    /*padding: 2em 0 3em;*/
+}
+
+.hi-icon {
+    display: inline-block;
+    font-size: 0px;
+    cursor: pointer;
+    margin: 5px 5px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+.hi-icon img {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.hi-icon:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content: '';
+    -webkit-box-sizing: content-box; 
+    -moz-box-sizing: content-box; 
+    box-sizing: content-box;
+}
+
+/*.hi-icon:before {
+    font-family: 'ecoicon';
+    speak: none;
+    font-size: 48px;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+}*/
+
+/* Effect 4 */
+.hi-icon-effect-4 .hi-icon {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 0 2px rgba(0,0,0,1);  
+}
+
+.hi-icon-effect-4a .hi-icon {
+    -webkit-transition: box-shadow 0.2s;
+    -moz-transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s;
+}
+
+.hi-icon-effect-4 .hi-icon:before {
+    line-height: 50px;
+}
+
+.hi-icon-effect-4 .hi-icon:after {
+    top: -2px;
+    left: -2px;
+    padding: 0;
+    z-index: 10;
+    border: 2px dashed #000;
+}
+
+.hi-icon-effect-4 .hi-icon:hover {
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    color: #000;
+}
+
+/* Effect 4b */
+.hi-icon-effect-4b .hi-icon:hover {
+    -webkit-transition: box-shadow 0.2s;
+    -moz-transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s;
+}
+
+.hi-icon-effect-4b .hi-icon:hover:after {
+    -webkit-animation: spinAround 9s linear infinite;
+    -moz-animation: spinAround 9s linear infinite;
+    animation: spinAround 9s linear infinite;
+}
+
+@-webkit-keyframes spinAround {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-moz-keyframes spinAround {
+    from {
+        -moz-transform: rotate(0deg)
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+@keyframes spinAround {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#canvasContainer {
+    position: fixed;
+    left: 220px;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/*NL WHATEVER*/
+/* general style for the form */
+.nl-form {
+    width: 100%;
+    margin: 0.2em auto 0 50px;
+    font-size: 2em;
+    line-height: 1.5;
+}
+
+.nl-form ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* normalize the input elements, make them look like everything else */
+.nl-form input,
+.nl-form select,
+.nl-form button {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.nl-form input:focus {
+    outline: none;
+}
+
+/* custom field (drop-down, text element) styling  */
+.nl-field {
+    display: inline-block;
+    position: relative;
+}
+
+.nl-field.nl-field-open {
+    z-index: 10000;
+}
+
+/* the toggle is the visible part in the form */
+.nl-field-toggle,
+.nl-form input,
+.nl-form select  {
+    line-height: inherit;
+    display: inline-block;
+    color: #FFE865;
+    cursor: pointer;
+    border-bottom: 1px dotted #FFE865;
+}
+
+/* drop-down list / text element */
+.nl-field ul {
+    position: absolute;
+    visibility: hidden;
+    background: #FFE865;
+    /* left: -0.5em; */
+    /* top: 30px; */
+    font-size: 80%;
+    opacity: 0;
+    -webkit-transform: translateY(-40%) scale(0.9);
+    -moz-transform: translateY(-40%) scale(0.9);
+    transform: translateY(-40%) scale(0.9);
+    -webkit-transition: visibility 0s 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: visibility 0s 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
+    margin-top: 20px;
+    padding: 10px;
+    color: black;
+}
+
+.nl-field.nl-field-open ul {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateY(-50%) scale(1);
+    -moz-transform: translateY(-50%) scale(1);
+    transform: translateY(-50%) scale(1);
+    -webkit-transition: visibility 0s 0s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: visibility 0s 0s, opacity 0.3s, -moz-transform 0.3s;
+    transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
+}
+
+.nl-field ul li {
+    color: #000;
+    position: relative;
+}
+
+.nl-dd ul li {
+    padding: 0 1.5em 0 0.5em;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nl-dd ul li.nl-dd-checked {
+    color: #FF0C51;
+}
+
+.no-touch .nl-dd ul li:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.no-touch .nl-dd ul li:hover:active {
+    color: #478982;
+}
+
+/* icons for some elements */
+.nl-dd ul li.nl-dd-checked:before,
+.nl-submit:before,
+.nl-field-go:before {
+    font-family: 'nlicons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.nl-dd ul li.nl-dd-checked:before {
+    content: "\e000";
+    position: absolute;
+    right: 1em;
+    font-size: 50%;
+    line-height: 3;
+}
+
+.nl-ti-text ul {
+    min-width: 8em;
+}
+
+.nl-ti-text ul li.nl-ti-input input {
+    width: 100%;
+    padding: 0.2em 2em 0.2em 0.5em;
+    border-bottom: none;
+    color: #fff;
+}
+
+.nl-form .nl-field-go {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    cursor: pointer;
+    background: rgba(0,0,0,0.1);
+    width: 1.8em;
+    text-align: center;
+    color: transparent;
+}
+
+.nl-field-go:before {
+    content: "\e001";
+    font-size: 75%;
+    color: #fff;
+    width: 100%;
+    line-height: 2.5;
+    display: block;
+}
+
+/* custom placeholder color */
+input::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+input:active::-webkit-input-placeholder ,
+input:focus::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.2);
+}
+
+input::-moz-placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+input:active::-moz-placeholder,
+input:focus::-moz-placeholder {
+    color: rgba(255,255,255,0.2);
+}
+
+input:-ms-input-placeholder {  
+    color: rgba(255,255,255,0.8);
+}
+
+input:active::-ms-input-placeholder ,
+input:focus::-ms-input-placeholder {
+    color: rgba(255,255,255,0.2);
+}
+
+/* example field below text input */
+.nl-ti-text ul li.nl-ti-example {
+    font-size: 40%;
+    font-style: italic;
+    font-weight: 400;
+    padding: 0.4em 1em;
+    color: rgba(0,0,0,0.2);
+    border-top: 1px dashed rgba(255,255,255,0.7);
+}
+
+.nl-ti-text ul li.nl-ti-example em {
+    color: #fff
+}
+
+/* submit button */
+.nl-submit-wrap {
+    margin-top: 0.4em;
+}
+
+.nl-form .nl-submit {
+    line-height: 3;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    background: #76C3BD;
+    color: #fff;
+    padding: 0 1em 0 0;
+    font-size: 40%;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.nl-submit:before {
+    content: "\e001";
+    color: #fff;
+    float: left;
+    padding: 0 0.7em;
+    margin: 0 0.8em 0 0;
+    background: #69B1A9;
+}
+
+.no-touch .nl-form .nl-submit:hover,
+.no-touch .nl-form .nl-submit:active {
+    background: #69B1A9;
+}
+
+.no-touch .nl-form .nl-submit:hover:before {
+    background: #58a199;
+}
+
+/* overlay becomes visible when a field is opened */
+.nl-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    z-index: 9999;
+    visibility: hidden;
+    -webkit-transition: visibility 0s 0.3s, opacity 0.3s;
+    -moz-transition: visibility 0s 0.3s, opacity 0.3s;
+    transition: visibility 0s 0.3s, opacity 0.3s;
+}
+
+.nl-field.nl-field-open ~ .nl-overlay {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+@media screen and (max-width: 45em) {
+    .nl-form {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 25em) {
+    .nl-form {
+        font-size: 2em;
+    }
+}

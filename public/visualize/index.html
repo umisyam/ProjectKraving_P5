@@ -1,0 +1,138 @@
+<!-- HTML Visualization file  
+*   Umi Syam - Thesis 1: Final Prototype
+*
+-->
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Craving Visualization</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Nixie+One'>
+  <link href='https://fonts.googleapis.com/css?family=Itim' rel='stylesheet' type='text/css'>
+  <!-- jQuery -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.19/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.19/addons/p5.sound.min.js"></script>
+  <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.19/addons/p5.dom.min.js"></script>
+</head>
+
+<body class="nl-blurred">
+
+    <script src="http://localhost:5000/socket.io/socket.io.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    <div id="top-bar">
+      <div>
+        <h1 id="logo" onclick="window.location.href='/'">crav·ing<span class="gray">/ˈkrāviNG/</span>
+        </h1>
+      </div>
+
+    </div>
+    <div id="search-div">
+
+      <input id="search-box" type="text" size="14" value="pizza">
+      <button id="search-btn">SEARCH</button>
+      <div class="search-options">
+        <h2>By Famous Food: </h2>
+        <section id="set-4">
+          <div class="hi-icon-wrap hi-icon-effect-4 hi-icon-effect-4b">
+            <a class="hi-icon" id="icon-pizza"><img src="../images/pizza.png"></a>
+            <a class="hi-icon" id="icon-sushi"><img src="../images/sushi.png"></a>
+            <a class="hi-icon" id="icon-steak"><img src="../images/steak.png"></a>
+            <a class="hi-icon" id="icon-burger"><img src="../images/burger.png"></a>
+            <a class="hi-icon" id="icon-bacon"><img src="../images/bacon.png"></a>
+            <a class="hi-icon" id="icon-cake"><img src="../images/cake.png"></a>
+            <a class="hi-icon" id="icon-choc"><img src="../images/choc.png"></a>
+            <a class="hi-icon" id="icon-donut"><img src="../images/donut.png"></a>
+            <a class="hi-icon" id="icon-fries"><img src="../images/fries.png"></a>
+            <a class="hi-icon" id="icon-icecream"><img src="../images/icecream.png"></a>
+            <a class="hi-icon" id="icon-pancake"><img src="../images/pancakes.png"></a>
+            <a class="hi-icon" id="icon-turkey"><img src="../images/turkey.png"></a>
+
+          </div>
+        </section>
+        <h2>By Brand: </h2>
+        <!-- <section id="byBrand"> -->
+          <div class="checkbox-container">
+            <input type="radio" name="brand" value="Burger King" id="brand1"></input>
+              <label for="brand"></label>
+              <span>Burger King</span>
+          </div>
+          <div class="checkbox-container">  
+            <input type="radio" name="brand" value="Chipotle" id="brand2"></input>
+              <label for="brand"></label>
+              <span>Chipotle</span>
+          </div>
+          <div class="checkbox-container">    
+            <input type="radio" name="brand" value="McDonalds" id="brand3"></input>
+              <label for="brand"></label>
+              <span>McDonalds</span>
+          </div>
+          <div class="checkbox-container">    
+            <input type="radio" name="brand" value="In-n-Out" id="brand4"></input>
+              <label for="brand"></label>
+              <span>In-n-Out</span>
+          </div>
+          <div class="checkbox-container">    
+            <input type="radio" name="brand" value="Dominos" id="brand5"></input>
+              <label for="brand"></label>
+              <span>Dominos</span>
+          </div>
+        <!-- </section> -->
+      </div>
+      
+    </div>
+    
+    <div id="canvasContainer">
+      <div class="main clearfix">
+          <form id="nl-form" class="nl-form">
+            What do people crave 
+            <select>
+              <option value="1" selected>on Thanksgiving break</option>
+              <option value="2">on Christmas + New Years</option>
+              <option value="3">on the week of Paris attacks</option>
+              <option value="4">right now?</option>
+            </select>
+            ?
+            <div class="nl-overlay"></div>
+          </form>
+        </div>
+    </div>
+
+    <div id="misc-panel">
+      <h1><span id="total-result">0</span> people are craving <span id="search-term">pizza</span> <span id="event-name">on Thanksgiving break.</span></h1>
+      <div class="trending-topics">
+        <h2>Trending Topics on that day: </h2>
+      </div>
+      <ul id="trending">
+        <li><a href="">#ImThankfulFor</a></li>
+        <li><a href="">Niall Holland</a></li>
+        <li><a href="">#Gala12GH16</a></li>
+        <li><a href="">Can Dündar</a></li>
+        <li><a href="">Happy Thanksgiving</a></li>
+        <li><a href="">#MeReSobranLasGanasDe</a></li>
+        <li><a href="">Romo</a></li>
+        <li><a href="">#ALDUB19thWeeksary</a></li>
+        <li><a href="">#XF9</a></li>
+        <li><a href="">Ma City</a></li>
+        <li><a href="">River</a></li>
+        <li><a href="">#ARIAs</a></li>
+      </ul> 
+    </div>
+
+    <script language="javascript" type="text/javascript" src="../sketch.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/nlform.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/modernizr.custom.js"></script>
+    <script>
+      var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+    </script>
+
+</body>
+
+</html>
